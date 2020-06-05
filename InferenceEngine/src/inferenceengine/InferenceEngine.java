@@ -98,12 +98,12 @@ class InferenceEngine
         System.exit(0);
     }
     
-    private static void CorrectUsage()
+    private static void CorrectUsage() // provide user usage info
     {
         System.out.println("Usage: iengine <method> <filename>.");
     }
     
-    private static void InitateMethods()
+    private static void InitateMethods() // Add methods to array
     {
         METHODS_LIST = new Methods[METHOD_COUNT];
         METHODS_LIST[0] = new TruthTable();
@@ -111,7 +111,7 @@ class InferenceEngine
         METHODS_LIST[2] = new BackwardsChaining();
     }
     
-    private static String[] ReadFile(String lFile)
+    private static String[] ReadFile(String lFile) // Read txt file
     {
         try
         {
@@ -127,7 +127,8 @@ class InferenceEngine
             fR.readLine();
             tempString = fR.readLine();
             tempArr[1] = tempString;
-
+            
+            lRead.close();
             return tempArr;
         }
         catch (FileNotFoundException error)

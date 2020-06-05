@@ -57,13 +57,13 @@ public class TruthTable extends Methods
     // Initate Methods
     private HashSet<String> InitaliseAll(String kb, HashSet<String> sym) 
     {
-        kb = kb.replaceAll("\\s", "");
         InitaliseKB(kb);
         return InitaliseSymbols(sym);
     }
     
-    private void InitaliseKB(String kb) 
+    private void InitaliseKB(String kb) // Initalise KB 
     {
+        kb = kb.replaceAll("\\s", "");
         String[] sArray = kb.split(";");
         for (String temp : sArray) 
         {
@@ -80,7 +80,7 @@ public class TruthTable extends Methods
         }
     }
     
-    private HashSet<String> InitaliseSymbols(HashSet<String> sym) 
+    private HashSet<String> InitaliseSymbols(HashSet<String> sym) // Create HashSet of sym
     {
         this.kb.stream().map((temp) -> 
         {
@@ -94,7 +94,7 @@ public class TruthTable extends Methods
     }
     
     // Alter Methods
-    private void AddSymbol(String sym, HashSet<String> symList) 
+    private void AddSymbol(String sym, HashSet<String> symList) // Add sym to symList HashSet
     {
         if (sym != null) 
         {
@@ -110,14 +110,14 @@ public class TruthTable extends Methods
         }
     }
     
-    private HashMap<String, Boolean> AddToHash(HashMap<String, Boolean> symList, String sym, Boolean check) 
+    private HashMap<String, Boolean> AddToHash(HashMap<String, Boolean> symList, String sym, Boolean check) // Add sym to symList HashMap
     {
         symList.put(sym, check);
         return symList;
     }
     
     // Check Methods
-    private boolean CheckAll(String search, HashSet<String> sym, HashMap<String, Boolean> symList) 
+    private boolean CheckAll(String search, HashSet<String> sym, HashMap<String, Boolean> symList) // Check all possible options
     {
         if (!sym.isEmpty()) 
         {
@@ -154,7 +154,7 @@ public class TruthTable extends Methods
         }
     }
     
-    private boolean CheckKB(HashMap<String, Boolean> symList) 
+    private boolean CheckKB(HashMap<String, Boolean> symList) // Check every entry in kb to see if they are correct
     {
         boolean result = true;
         
@@ -168,7 +168,7 @@ public class TruthTable extends Methods
         return result;
     }
     
-    private boolean CheckKBTrue(HashMap<String, Boolean> symList, HornClause comp ) 
+    private boolean CheckKBTrue(HashMap<String, Boolean> symList, HornClause comp ) // Check if kb is true
     {
         if (comp.getAfter() == null)
         {

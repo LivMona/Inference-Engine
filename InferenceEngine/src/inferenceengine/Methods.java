@@ -8,7 +8,7 @@
 package inferenceengine;
 import java.util.*;
 
-public abstract class Methods 
+public abstract class Methods // Abstract class for TT, FC & BC
 {
     public String methodCode;
     public String methodName;

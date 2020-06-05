@@ -110,7 +110,7 @@ public class ForwardsChaining extends Methods
 
 
 // Private Methods
-    private void InitaliseKB(String kb) 
+    private void InitaliseKB(String kb) // Initalise knowlegde base
     {
         //seperate sKb
         kb = kb.replaceAll("\\s", "");
@@ -148,7 +148,7 @@ public class ForwardsChaining extends Methods
     }
     
     
-    private boolean Contains(String temp, String search) 
+    private boolean Contains(String temp, String search) // checks temp string to see if it's search
     {
         temp = temp.split("=>")[0];
         String[] searchArray = temp.split("&");
