@@ -9,7 +9,8 @@
 package inferenceengine;
 import java.util.*;
 
-public class ForwardsChaining extends Methods {
+public class ForwardsChaining extends Methods 
+{
 // Public Methods
     public ForwardsChaining()  // Constructor
     {
